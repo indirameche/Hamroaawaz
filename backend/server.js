@@ -8,6 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
+// Serve uploaded images statically
+app.use('/uploads', express.static('uploads')); 
+
 // Add this to your backend server.js
 app.post('/api/admin/login', (req, res) => {
   const { email, password } = req.body;
